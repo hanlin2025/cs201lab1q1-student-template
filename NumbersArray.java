@@ -27,8 +27,8 @@ public class NumbersArray {
     */
     // Start
     
-    public static String findMax(Integer[] input) {
-        int maxValue = 0;
+    public static int findMax(Integer[] input) {
+        int maxValue = Integer.MIN_VALUE;
 
         for (int i = 0; i < input.length; i++) {
             if (input[i] > maxValue) {
@@ -36,7 +36,7 @@ public class NumbersArray {
             }
         }
 
-        return Integer.toString(maxValue);
+        return maxValue;
     }
     // End
 
@@ -49,7 +49,7 @@ public class NumbersArray {
     // Start
     
     public static Integer[] findDuplicates(Integer[] input) {
-        HashMap<Integer, Integer> resultMap = new HashMap<>();
+        Map<Integer, Integer> resultMap = new LinkedHashMap<>();
 
         for (int i = 0; i < input.length; i++) {
             if (!resultMap.containsKey(input[i])) {
